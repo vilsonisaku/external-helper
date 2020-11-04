@@ -4,6 +4,7 @@ namespace ExHelp;
 
 use ExHelp\Constants\BOKeys;
 use ExHelp\Constants\CachingKeys;
+use ExHelp\Constants\PokerKeys;
 use ExHelp\Skin;
 
 class RedisKeys
@@ -24,8 +25,9 @@ class RedisKeys
     static function keys(){
         $boKeys = (new \ReflectionClass( BOKeys::class ) )->getConstants();
         $cachingKeys = (new \ReflectionClass( CachingKeys::class ) )->getConstants();
+        $PokerKeys = (new \ReflectionClass( PokerKeys::class ) )->getConstants();
 
-        return [$boKeys,$cachingKeys];
+        return [$boKeys,$cachingKeys,$PokerKeys];
     }
 
     static function get($key,$path='',$bySkin=true)

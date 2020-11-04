@@ -2,7 +2,7 @@
 
 namespace ExHelp\Constants;
 
-class BOKeys
+class PokerKeys
 {
     const prefix="poker_";
 
