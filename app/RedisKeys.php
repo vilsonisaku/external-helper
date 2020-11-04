@@ -45,6 +45,8 @@ class RedisKeys
 
     static function getDefault($key,$path='')
     {
+        $key = strtolower($key);
+
         $keys = static::keys();
         
         $skin_id = Skin::default_skin_id.'_';
@@ -53,7 +55,9 @@ class RedisKeys
 
             if( !in_array($key,$appKeys) ) continue;
 
-            return $appKeys['prefix'].$skin_id. $key. $path;
+            $prefix = strtolower($appKeys['prefix']);
+
+            return $prefix.$skin_id. $key. $path;
         }
         return null;
     }
