@@ -33,6 +33,12 @@ class Eloquent
         return $this->getRedisKey();
     }
 
+    public static function init(){
+        $self = new static;
+        $self->fetch();
+        return $self;
+    }
+
     function setDefault($default){
         $this->default = $default;
     }
