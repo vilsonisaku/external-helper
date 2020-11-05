@@ -33,8 +33,8 @@ class Eloquent
         return $this->getRedisKey();
     }
 
-    public static function init(){
-        $self = new static;
+    public static function init($id=[]){
+        $self = new self(...$id);
         $self->fetch();
         return $self;
     }
